@@ -1,29 +1,27 @@
 #include "main.h"
 
 /**
- * rot13 - encodes a string into rot13
- * @s: string to encode
+ * rot13 - converts string to least
  *
- * Return: the resulting string
+ * @c: character string pointer
+ * Return: character pointer
  */
 char *rot13(char *)
 {
 	int i, j;
+	char a[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char b[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; c[i] != '\0'; i++)
 	{
-		for (j = 0; a[j] != '\0'; j++)
+		for (j = 0; j < 52; j++)
 		{
-			if (s[i] == a[j])
+			if (alphabet[j] == c[i])
 			{
-				s[i] = b[j];
+				c[i] = rot_13[j];
 				break;
 			}
 		}
 	}
-
-	return (s);
+	return (c);
 }
