@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * *_memset - fills memory wit a constant byte
+ * *_memset - fills memory with a constant byte
  * @s: memory area to be filled
  * @b: char to copy
  * @n: number of times to copy b
@@ -32,7 +32,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *ptr;
 
-	if (nmemb == 0 || size ++ 0)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
 	ptr = malloc(size * nmemb);
